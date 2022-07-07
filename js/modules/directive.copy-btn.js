@@ -7,7 +7,7 @@ define(['angular', 'app'], function (angular, app) {
     function CopyBtnDirective($parse) {
 
         return {
-            restrict: A,
+            restrict: 'A',
             link: copyBtnLink
         };
 
@@ -29,12 +29,12 @@ define(['angular', 'app'], function (angular, app) {
                 // attempt to copy to clipboard
                 try {
                     if (document.execCommand('copy')) {
-                        successCallback && $parse(successCallback)(scope);
+                        successCallback && $parse(successCallback)($scope);
                     } else {
-                        failCallback && $parse(failCallback)(scope);
+                        failCallback && $parse(failCallback)($scope);
                     }
                 } catch (err) {
-                    failCallback && $parse(failCallback)(scope);
+                    failCallback && $parse(failCallback)($scope);
                 }
             });
         }

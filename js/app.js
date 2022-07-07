@@ -14,13 +14,14 @@ define('app', ['angular', 'angular-drag-drop-lists', 'rawUI'], function (angular
         var retinaMode = {},
             normalMode = {},
             gen = $scope.g = {
-                mode: 'retina', // the generator mode
+                // mode: 'retina', // the generator mode
+                mode: 'normal', // the generator mode. Possible values are 'retina', 'normal'
 
                 sprites: {
                     showSettings: false,
-                    spacing: 2, // the amount of spacing between images in the sprite (px)
+                    spacing: 4, // the amount of spacing between images in the sprite (px)
                     padding: 0, // the amount of extra empty space added around the images in the sprite (px)
-                    orientation: 'vertical', // the sprite orientation. Possible values are 'vertical', 'horizontal', 'diagonal' and 'packed'
+                    orientation: 'packed', // the sprite orientation. Possible values are 'vertical', 'horizontal', 'diagonal' and 'packed'
                     forcedWidth: '', // A pixel value that forces the width of all images added to the sprite
                     forcedHeight: '' // A pixel value that forces the height of all images added to the sprite
                 },
@@ -34,6 +35,19 @@ define('app', ['angular', 'angular-drag-drop-lists', 'rawUI'], function (angular
                     spriteName: '', // the name of the stylesheet sprite class
                     imageName: '', // the name of the normal sprite file
                     retinaName: '' // the name of the retian sprite file
+                },
+
+                googleMap: {
+                    showSettings: false,
+                    indent: 4, // stylesheet indent spaces
+                    zoomFactor: 2,
+                    type: 'typescript', // The stylehseet type. Possible values are 'ts' and 'json'.
+                    prefix: '', // css image name prefix
+                    suffix: '', // css image name suffix
+                    spriteName: 'baseSprite', // the name of the stylesheet sprite class
+                    imageName: '', // the name of the normal sprite file
+                    retinaName: '' // the name of the retian sprite file
+
                 },
 
                 preview: {
