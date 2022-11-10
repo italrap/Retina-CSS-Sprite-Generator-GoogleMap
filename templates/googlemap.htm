@@ -203,6 +203,9 @@
                     <div>    position: google.maps.Point; </div>
                     <div>}</div>
                     <div></div>
+
+                <div>export interface Sprites { [key: string]: SpriteDef }</div>
+                    <div></div>
                     <div>
                         export const <span class="css-selector">sprites = getSprites(2)</span>;
                     </div>
@@ -231,7 +234,7 @@
             <space-indent id="cssStylesheet-gm" class="ng-cloak" data-spaces="g.googleMap.indent" data-update="spriteData">
 
                 <div>
-                const getSprites = (zoomFactor: number): { [key: string]: SpriteDef } => {
+                const getSprites = (zoomFactor: number): Sprites => {
        
                 <div>
                     const <span class="css-selector">{{g.googleMap.spriteName || 'baseSprite'}}</span> = {
@@ -248,7 +251,7 @@
                 </div>
                 }
                 <div>
-                    const <span class="css-selector">sprites</span>: {[key: string]: SpriteDef} = {
+                    const <span class="css-selector">sprites</span>: Sprites = {
                 </div>
                 <!-- Property Repeater -->
                 <div data-ng-repeat="item in spriteData" class="css-entry" data-indent>
