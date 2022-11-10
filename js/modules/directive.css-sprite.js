@@ -268,7 +268,7 @@ define(['angular', 'app', 'modules/lib-box-packing', 'image-background'], functi
             try {
                 context.drawImage(s.buffer, 0, 0, s.canvas.width, s.canvas.height);
             } catch (err) {
-                console.warn('' + err);
+                console.warn(err.message, err);
             }
         }
 
